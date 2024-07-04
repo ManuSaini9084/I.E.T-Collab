@@ -10,7 +10,7 @@ router.post('/register', async (req, res) => {
   const { name, email, password, role } = req.body;
 
   // Password validation
-  const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+  const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+={}[\]:;<>,.?~\\|-]).{8,}$/;
   if (!passwordRegex.test(password)) {
     return res.status(400).json({ message: 'Password must be at least 8 characters long and contain letters, numbers, and special characters.' });
   }
