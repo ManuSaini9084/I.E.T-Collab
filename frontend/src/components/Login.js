@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 function Login() {
   const [formData, setFormData] = useState({
@@ -24,7 +24,7 @@ function Login() {
       if (role === 'student') {
         navigate('/student');
       } else {
-        navigate('/admin');
+        navigate('/');
       }
     } catch (err) {
       console.error(err);
@@ -33,9 +33,9 @@ function Login() {
   };
 
   return (
-    <div className="flex items-center bg-green-100 justify-center h-screen">
+    <div className="flex items-center justify-center">
       <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-12 py-10 w-full max-w-lg border-2 border-gray-300">
-        <h2 className="text-2xl  mb-4 text-center"> Log in to your account.</h2>
+        <h2 className="text-2xl mb-4 text-center">Log in to your account</h2>
         {error && <div className="text-red-500 mb-4">{error}</div>}
         <div className="mb-4">
           <label className="block text-black mb-2" htmlFor="email">
@@ -67,13 +67,19 @@ function Login() {
             required
           />
         </div>
-        <div className="flex items-center justify-between">
+        <div className="flex items-center flex-col sm:flex-row justify-center sm:justify-between">
           <button
             className="bg-green-600 hover:bg-green-400 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="submit"
           >
             Sign In
           </button>
+          <Link
+            to="/register"
+            className="mt-4 sm:mt-0 ml-0 sm:ml-4 inline-block align-baseline font-bold text-sm text-green-600 hover:text-green-400"
+          >
+            Don't have an account? Sign Up
+          </Link>
         </div>
       </form>
     </div>

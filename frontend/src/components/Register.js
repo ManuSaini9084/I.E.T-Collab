@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Register() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     password: '',
   });
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -16,17 +19,27 @@ function Register() {
     e.preventDefault();
     try {
       const res = await axios.post('http://localhost:5000/api/auth/register', { ...formData, role: 'student' });
-      alert(res.data.message);
+      alert(res.data.message); 
+      navigate('/login'); 
     } catch (err) {
-      console.error(err);
-      alert('Error registering user');
+      if (err.response && err.response.status === 400) {
+        if (err.response.data.message === 'User already exists') {
+          setErrorMessage('User with this email already exists');
+        } else {
+          setErrorMessage('Password must be at least 8 characters long and contain letters, numbers, and special characters.');
+        }
+      } else {
+        console.error(err);
+        setErrorMessage('Error registering user');
+      }
     }
   };
 
   return (
-    <div className="flex items-center bg-green-100 justify-center h-screen">
+    <div className="flex items-center  justify-center ">
       <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-12 py-10 w-full max-w-lg border-2 border-gray-300">
         <h2 className="text-2xl mb-4 text-center">Register</h2>
+        {errorMessage && <div className="text-red-500 text-center mb-4">{errorMessage}</div>}
         <div className="mb-4">
           <label className="block text-black mb-2" htmlFor="name">
             Name
@@ -71,6 +84,7 @@ function Register() {
             onChange={handleChange}
             required
           />
+          
         </div>
         <div className="flex items-center justify-between">
           <button
@@ -79,6 +93,12 @@ function Register() {
           >
             Register
           </button>
+          <Link
+            to="/login"
+            className="inline-block align-baseline font-bold text-sm text-green-600 hover:text-green-400"
+          >
+            Already have an account? Login
+          </Link>
         </div>
       </form>
     </div>
