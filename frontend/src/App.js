@@ -14,9 +14,23 @@ import Branch from './components/Academics/Branches';
 import Breadcrumbs from './components/Academics/Breadcrumbs';
 import ComingSoon from './components/Academics/ComingSoon';
 import './index.css';
-
+import Footer from './components/Footer';
+import {useState , useEffect} from "react"
+import SplashScreen from "./components/SplashScreen/Splash"
 function App() {
-  return (
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+      // Simulate a loading delay
+      const timer = setTimeout(() => {
+          setLoading(false);
+      }, 3000); // Adjust the delay as needed
+
+      return () => clearTimeout(timer);
+  }, []);
+
+  return (loading) ? (<SplashScreen/>) : (
     <div className="App">
       <Header />
       <Breadcrumbs/>
@@ -33,8 +47,8 @@ function App() {
         <Route path="/academics/paper/:branch" element={<Branch />} />
         <Route path="/academics/notes/:branch" element={<Branch />} />
         <Route path="/academics/syllabus/:branch" element={<Branch />} />
-
       </Routes>
+      <Footer/>
     </div>
   );
 }

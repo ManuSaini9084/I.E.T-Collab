@@ -1,0 +1,143 @@
+.section_padding{
+    padding: 3rem 3rem;
+}
+.footer{
+    background-color: #DCFCE7;
+}
+.iet{
+    float:right;
+}
+.sb_footer{
+    display: flex;
+    flex-direction: column;
+}
+.sb_footer-Links{
+    display: flex;
+    justify-content:  space-between;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+.sb_footer-Links_div{
+    width: 200px;
+    margin: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    color: black;
+    align-items: flex-start;
+}
+Link{
+    color: rgb(175 , 175, 179);
+    text-decoration: none;
+}
+.socialmedia{
+    display: flex;
+    flex-direction: row;
+    width: 100px;
+}
+.sb_footer-Links_div h1{
+    margin-left: 10px;
+    font-size: large;
+    font-weight: bold;
+    font-style:inherit;
+    display: inline;
+
+}
+.sb_footer-Links_div h3{
+    margin-top: 15px;
+}
+.socialmedia  svg{
+    width: 30px;
+    height: 20px;
+    max-height: 50px;
+    cursor: pointer;
+    padding: 1px;
+}
+.sb_footer-Links_div h4{
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: bolder;
+    line-height: 17px;
+    margin-bottom: 0.9rem;
+}
+.sb_footer-Links_div img{
+    width: 60px;
+    display: inline;
+}
+.sb_footer-Links_div p{
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: small;
+    margin: 0.5rem 0;
+    cursor: pointer;
+}
+hr{
+    border-color:  black;
+    border: 1px solid;
+    width:100%;
+    margin-bottom: 10px;
+}
+.sb_footer-below{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 0.2rem;
+}
+.sb_footer-below-Links p{
+    font-size: 13px;
+    line-height: 15px;
+    margin-left: 2rem;
+    color: black;
+    font-weight: 600 ;
+    display: inline;
+}
+.sb_footer-Links_div p:hover{
+    font-weight: bold;
+    transform: scale(1.2);
+    color: black;
+   
+}
+
+/* FOR RESPONSIVENESS */
+@media screen and (max-width:850px) {
+    .sb_footer-heading h1{
+        font-size: 44px;
+        line-height: 50px;
+    } 
+}
+@media screen and (max-width:850px) {
+    .sb_footer-heading h1{
+        font-size: 34px;
+        line-height: 42px;
+    } 
+    .sb_footer-Links div{
+        margin: 1rem 0;
+    }
+    .sb_footer-btn p{
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .sb_footer-below{
+        flex-direction: column;
+        justify-content: left;
+    }
+    .sb_footer-below-links{
+        flex-direction: column;
+    }
+    .sb_footer-below-links p{
+       margin-left: 0;
+       margin-top: 1rem;
+    }
+}
+@media screen and (max-width:400px) {
+    .sb_footer-heading h1{
+        font-size: 27px;
+        line-height: 38px;
+    }
+    
+}
+
