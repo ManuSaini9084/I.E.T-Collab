@@ -26,7 +26,7 @@ router.post('/register', async (req, res) => {
       name,
       email,
       password: hashedPassword,
-      role: role || 'student', // Default role to 'student'
+      role: role || 'student', 
     });
 
     await newUser.save();
