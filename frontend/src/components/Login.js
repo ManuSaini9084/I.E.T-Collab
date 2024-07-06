@@ -21,11 +21,7 @@ function Login() {
       const res = await axios.post('http://localhost:5000/api/auth/login', formData);
       const { token, role } = res.data;
       localStorage.setItem('token', token);
-      if (role === 'student') {
-        navigate('/student');
-      } else {
         navigate('/');
-      }
     } catch (err) {
       console.error(err);
       setError('Error logging in');

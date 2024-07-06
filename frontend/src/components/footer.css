@@ -50,6 +50,9 @@ Link{
 .sb_footer-Links_div h3{
     margin-top: 15px;
 }
+.socialmedia:hover{
+    transform: translateY(-5px); 
+}
 .socialmedia  svg{
     width: 30px;
     height: 20px;

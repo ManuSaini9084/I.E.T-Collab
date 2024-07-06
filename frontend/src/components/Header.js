@@ -40,33 +40,34 @@ function Header() {
       <div className="container mx-auto flex justify-between items-center py-4 px-5">
         <div className="flex-shrink-0">
           <Link to="/">
-            <img src={ietlogo} alt="College Logo" className="h-10 mx-5" />
+            <img src={ietlogo} alt="College Logo" className="h-10 float-left" />
           </Link>
         </div>
         <nav className="flex-1 text-center hidden md:block">
-          <ul className="flex justify-center space-x-8">
+          <ul className="flex justify-center space-x-8 ">
             <li>
-              <Link to="/academics" className="text-gray-600 hover:text-black hover:bg-gray-200 hover:ring-2 hover:ring-green-400 p-2 rounded transition duration-300">
+              <Link to="/academics" className="text-gray-600 hover:text-black hover:bg-gray-200 hover:ring-2 hover:ring-green-400 p-2 rounded">
                 Academics
               </Link>
             </li>
             <li>
-              <a href="#" className="text-gray-600 hover:text-black hover:bg-gray-200 hover:ring-2 hover:ring-green-400 p-2 rounded transition duration-300">
+             <Link to="/iet-store" ><a href="#" className="text-gray-600 hover:text-black hover:bg-gray-200 hover:ring-2 hover:ring-green-400 p-2 rounded ">
                 IET Store
               </a>
+              </Link>
             </li>
             <li>
-              <a href="https://alumni-speak.iethub.org/" className="text-gray-600 hover:text-black hover:bg-gray-200 hover:ring-2 hover:ring-green-400 p-2 rounded transition duration-300" target="_blank" rel="noopener noreferrer">
+              <a href="https://alumni-speak.iethub.org/" className="text-gray-600 hover:text-black hover:bg-gray-200 hover:ring-2 hover:ring-green-400 p-2 rounded " target="_blank" rel="noopener noreferrer">
                 Alumni
               </a>
             </li>
             <li>
-              <a href="https://iethub.org/clubs" className="text-gray-600 hover:text-black hover:bg-gray-200 hover:ring-2 hover:ring-green-400 p-2 rounded transition duration-300" target="_blank" rel="noopener noreferrer">
+              <a href="https://iethub.org/clubs" className="text-gray-600 hover:text-black hover:bg-gray-200 hover:ring-2 hover:ring-green-400 p-2 rounded" target="_blank" rel="noopener noreferrer">
                 Clubs
               </a>
             </li>
             <li>
-              <a href="#" className="text-gray-600 hover:text-black hover:bg-gray-200 hover:ring-2 hover:ring-green-400 p-2 rounded transition duration-300">
+              <a href="#" className="text-gray-600 hover:text-black hover:bg-gray-200 hover:ring-2 hover:ring-green-400 p-2 rounded ">
                 Events
               </a>
             </li>
@@ -144,7 +145,7 @@ function Header() {
         <Link
           to="/login"
           onClick={handleMenuItemClick}
-          className="text-gray-600 hover:text-black hover:bg-green-200 hover:border hover:border-gray-400 block py-2 px-4 rounded transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-gray-400"
+          className="text-gray-600 hover:text-black hover:bg-green-200 hover:border hover:border-gray-400 block py-2 px-4 rounded transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-gray-400 float-right"
         >
           Log In
         </Link>
@@ -153,7 +154,7 @@ function Header() {
         <Link
           to="/register"
           onClick={handleMenuItemClick}
-          className="text-gray-600 hover:text-black hover:bg-green-200 hover:border hover:border-gray-400 block py-2 px-4 rounded transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-gray-400"
+          className="text-gray-600 hover:text-black hover:bg-green-200 hover:border hover:border-gray-400 block py-2 px-4 rounded transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-gray-400 float-right"
         >
           Sign Up
         </Link>

@@ -27,7 +27,7 @@ const Footer = () => {
               Students Only...
             </h3>
             <h4>Social Media Links</h4>
-            <div className="socialmedia">
+            <div className="socialmedia" >
               <Link
                 to="https://www.facebook.com/"
                 target="_blank"
